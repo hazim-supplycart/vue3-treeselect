@@ -4,6 +4,7 @@
       v-model="value"
       :multiple="true"
       :options="options"
+      :allow-single-child="true"
       :value-consists-of="valueConsistsOf" />
     <treeselect-value :value="value" />
     <p><strong>Value consists of:</strong></p>
@@ -56,6 +57,10 @@ export default {
               {
                 id: "person-b",
                 label: "Person B 🧔"
+              },
+              {
+                id: "person-c",
+                label: "Person C 👳"
               }
             ]
           },
@@ -63,10 +68,6 @@ export default {
             id: "team-ii",
             label: "Team II 👥",
             children: [
-              {
-                id: "person-c",
-                label: "Person C 👳"
-              },
               {
                 id: "person-d",
                 label: "Person D 👧"

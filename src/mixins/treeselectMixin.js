@@ -309,6 +309,14 @@ export default {
     },
 
     /**
+     * Prevent single child from being selected?
+     */
+    allowSingleChild: {
+      type: Boolean,
+      default: false
+    },
+
+    /**
      * Disable the control?
      */
     disabled: {
@@ -1115,8 +1123,8 @@ export default {
           ? this.modelValue
           : []
         : this.modelValue
-        ? [this.modelValue]
-        : [];
+          ? [this.modelValue]
+          : [];
       const matched = find(
         valueArray,
         (node) => node && this.enhancedNormalizer(node).id === id
@@ -2135,10 +2143,9 @@ export default {
         let curr = node;
         while ((curr = curr.parentNode) !== NO_PARENT_NODE) {
           if (curr.children.every(this.isSelected)) {
-            this.addValue(curr);
-          } else {
-            break;
-          }
+            if (this.allowSingleChild) {break}
+            else {this.addValue(curr)}
+          } else {break}
         }
       }
     },

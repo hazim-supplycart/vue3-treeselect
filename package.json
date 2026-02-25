@@ -1,5 +1,5 @@
 {
-  "name": "@zanmato/vue3-treeselect",
+  "name": "@hazim-supplycart/vue3-treeselect",
   "version": "0.4.3",
   "description": "Tree select hierarchical component for Vue 3",
   "main": "dist/vue3-treeselect.cjs.min.js",
@@ -7,6 +7,7 @@
   "css": "dist/vue3-treeselect.min.css",
   "style": "dist/vue3-treeselect.min.css",
   "author": "zanmato",
+  "co-author": "Hazim Supplycart <hazim@supplycart.my>",
   "scripts": {
     "prepare": "npm run build-library",
     "build-library": "webpack build --config webpack.lib.config.js --mode production",
@@ -100,8 +101,5 @@
     "jasmine-expect"
   ],
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zanmato/vue3-treeselect.git"
-  }
+  "repository": "hazim-supplycart/vue-treeselect"
 }
