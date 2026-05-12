@@ -10,7 +10,7 @@ const packageVersion = require("./package.json").version;
 const banner = `
 vue3-treeselect v${packageVersion} | (c) ${new Date().getFullYear()} Andreas Johansson
 Released under the MIT License.
-https://vue3-treeselect.js.org/
+https://zanmato.github.io/vue3-treeselect/
 `.trim();
 
 const baseConfig = {
@@ -90,6 +90,19 @@ module.exports = [
       path: path.join(__dirname, "dist/"),
       libraryTarget: "umd",
       filename: "vue3-treeselect.umd.min.js"
+    }
+  },
+  {
+    ...baseConfig,
+    target: ["web", "es2020"],
+    experiments: { outputModule: true },
+    externals: [nodeExternals({ importType: "module" })],
+    output: {
+      path: path.join(__dirname, "dist/"),
+      library: { type: "module" },
+      filename: "vue3-treeselect.esm.min.js",
+      module: true,
+      environment: { module: true }
     }
   }
 ];
